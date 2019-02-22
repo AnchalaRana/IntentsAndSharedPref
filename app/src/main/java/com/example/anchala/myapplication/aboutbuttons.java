@@ -18,11 +18,11 @@ public class aboutbuttons extends AppCompatActivity {
 
 
 // TOAST
-        Toast toast = Toast.makeText(aboutbuttons.this , "hello",Toast.LENGTH_LONG);
-        toast.show();
-
-        WebView webView =findViewById(R.id.webview);
-        webView.loadUrl("https://google.com");
+//        Toast toast = Toast.makeText(aboutbuttons.this , "hello",Toast.LENGTH_LONG);
+//        toast.show();
+//
+//        WebView webView =findViewById(R.id.webview);
+//        webView.loadUrl("https://google.com");
 
 //          2nd Method
 //        Button buttonSubmit = findViewById(R.id.button);

@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity{
                 Log.d("camera intent", "onClick: camera");
                 Intent camera_intent = new Intent();
                 camera_intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(camera_intent , 1888);
+                startActivity(camera_intent);
             }
 
             private void startActivityForResult(Intent camera_intent, int i) {
@@ -88,15 +88,16 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
-        SharedPreferences.Editor preferences = getSharedPreferences("Anchala",MODE_PRIVATE).edit();
-        preferences.putBoolean("isFirstTimeUser",true);
-        preferences.commit();
+        SharedPreferences preferences = getSharedPreferences("Anchala",MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("isFirstTimeUser",true);
+        editor.commit();
 
         boolean isfirstUser;
-        isfirstUser = preferences.getBoolean();
+        isfirstUser = preferences.getBoolean("Anchala", true);
         if(isfirstUser)
         {
-            Intent intent = new Intent();
+            Intent intent = new Intent(this, aboutbuttons.class);
             startActivity(intent);
         }
 
